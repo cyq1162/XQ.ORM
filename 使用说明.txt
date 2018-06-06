@@ -1,0 +1,22 @@
+1：
+简单救命：
+实体要继承自：EntityBase
+public class SysIniListBean :EntityBase
+	{
+		public SysIniListBean()
+		{
+			base.SetEntity(this);
+		}
+		private int? _ID;
+		/// <summary>
+        /// 编号,自增关键编号
+        /// </summary>
+		public Nullable<int> ID
+		{
+			get {return _ID;}
+			set {_ID = value;}
+		}
+	}
+SysIniListBean sysIniListEntity = Factory<SysIniListBean>.Instance.Select("ID_SysIni=27");
+
+2：查询分页用的SelectBase存储过程：需要在数据库执行该存储过程。
